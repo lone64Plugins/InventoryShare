@@ -1,0 +1,31 @@
+plugins {
+    id "java"
+    id "java-library"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+
+shadowJar {
+    archiveBaseName.set("InventoryShare")
+    archiveClassifier.set("")
+    archiveVersion.set("")
+}
+
+jar {
+    finalizedBy shadowJar
+}
+
+group = "cloud.foliamc.inventoryshare"
+
+repositories {
+    maven { url = "https://repo.lone64.org/repository/maven-public/" }
+}
+
+dependencies {
+    compileOnly "org.spigotmc:spigot-api:R0.1:1.12.2"
+
+    implementation "io.slib:library:rel:1.0.0a-r2"
+}

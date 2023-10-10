@@ -1,0 +1,15 @@
+name: InventoryShare
+main: cloud.foliamc.inventoryshare.InventoryShare
+author: lone64
+version: 1.0.0
+api-version: '1.13'
+description: 인벤토리 공유 플러그인
+permissions:
+  is.admin:
+    default: op
+    description: 인벤토리 공유 관리자 권한
+commands:
+  inventoryshare:
+    aliases: [is]
+    permission: is.admin
+    description: 인벤토리 공유 관리자 명령어
